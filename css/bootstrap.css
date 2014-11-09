@@ -741,7 +741,7 @@ h4,
 h5,
 h6 {
   margin: 10px 0;
-  font-family: Edwardian Script ITC;
+  font-family: 'Raleway', sans-serif;
   font-weight: bold;
   line-height: 20px;
   color: inherit;
@@ -774,11 +774,15 @@ h2 {
 }
 
 h3 {
-  font-size: 300%%;
+  font-size: 250%;
+}
+
+h3.unfortunately {
+  font-size: 200%;
 }
 
 h4 {
-  font-size: 17.5px;
+  font-size: 150%;
 }
 
 h5 {
@@ -3215,15 +3219,16 @@ button.close {
 }
 
 .btn {
-  background: #eb235c;
-  background-image: -webkit-linear-gradient(top, #eb235c, #eb235c);
-  background-image: -moz-linear-gradient(top, #eb235c, #eb235c);
-  background-image: -ms-linear-gradient(top, #eb235c, #eb235c);
-  background-image: -o-linear-gradient(top, #eb235c, #eb235c);
-  background-image: linear-gradient(to bottom, #eb235c, #eb235c);
+  background: #ed3754;
+  background-image: -webkit-linear-gradient(top, #ed3754, #ed3754);
+  background-image: -moz-linear-gradient(top, #ed3754, #ed3754);
+  background-image: -ms-linear-gradient(top, #ed3754, #ed3754);
+  background-image: -o-linear-gradient(top, #ed3754, #ed3754);
+  background-image: linear-gradient(to bottom, #ed3754, #ed3754);
   -webkit-border-radius: 15;
   -moz-border-radius: 15;
   border-radius: 15px;
+  border: none;
   font-family: Arial;
   color: #ffffff;
   font-size: 20px;
@@ -3960,7 +3965,7 @@ input[type="submit"].btn.btn-mini {
 .nav > li > a:focus {
   text-decoration: none;
   color: #000000;
-  background-color: #eeeeee;
+  background-color: rgba(237,55,84, 0.3);
 }
 
 .nav > li > a > img {
@@ -3993,6 +3998,7 @@ input[type="submit"].btn.btn-mini {
   margin-top: 10%;
   font-family: 'Raleway', sans-serif;
   font-weight: bold;
+  font-size: 15.5px;
   background-color: rgba(255, 255, 255,0.95);
 }
 
@@ -4012,8 +4018,8 @@ input[type="submit"].btn.btn-mini {
 .nav-list > .active > a,
 .nav-list > .active > a:hover,
 .nav-list > .active > a:focus {
-  color: #000000;
-  background-color: #FFD1B0;
+  color: #ffffff;
+  background-color: #ed3754;
   border-radius: 15px;
 }
 
@@ -4382,7 +4388,7 @@ input[type="submit"].btn.btn-mini {
   min-height: 40px;
   padding-right: 20px;
   padding-left: 20px;
-  background-color: #FFD1B0;
+  background-color: #ed3754;
   border: 1px solid #d4d4d4;
   -webkit-border-radius: 4px;
      -moz-border-radius: 4px;
@@ -4614,6 +4620,11 @@ input[type="submit"].btn.btn-mini {
 .navbar .nav.pull-right {
   float: right;
   margin-right: 0;
+}
+
+.navbar .nav.pull-left {
+  float: left;
+  margin-left: 0;
 }
 
 .navbar .nav > li {
@@ -6180,16 +6191,30 @@ a.badge:focus {
 }
 
 .myBackground {
-  background-color: rgba(255,92,92, 0.5);
+  background-color: rgba(237,55,84, 0.6);
   color: inherit;
-  border: solid;
-  border-radius: 25px;
+  border-radius: 15px;
+  font-family: 'Raleway', sans-serif;
 }
 
 .myNavbar {
   background-color: rgba(255,255,255, 1);
   color: inherit;
-  border: solid;
+}
+
+img.leaders {
+  margin-left: 5%;
+  margin-right: 5%;
+  border-radius: 25px;
+  -moz-border-radius: 25px;
+  -webkit-border-radius: 25px;
+}
+
+img.teamPhoto {
+  margin: 1%;
+  border-radius: 25px;
+  -moz-border-radius: 25px;
+  -webkit-border-radius: 25px;
 }
 
 #terms {
@@ -6218,7 +6243,7 @@ a.fancybox:hover img {
 }
 
 .normalText {
-	font-family: Harrington;
+	font-family: 'Raleway', sans-serif;
 }
 
 .navbar .navbar-inverse {
@@ -6243,13 +6268,13 @@ span.name {
 
 #username {
 	font-family: 'Raleway', sans-serif;
-  color: #666666;
+  color: #ffffff;
   text-shadow: 4px 4px 3px rgba(0,0,0,0.1); 
 }
 
 #logout {
 	font-family: 'Raleway', sans-serif;
-  color: #666666;
+  color: #ffffff;
   text-shadow: 4px 4px 3px rgba(0,0,0,0.1);
 }
 
@@ -6291,4 +6316,49 @@ span.name {
   {
     border-top: solid 2px #e5e5e5;
     text-align: center;
+	color: #ffffff;
   }
+  
+  #category {
+  
+	color: #ffffff;
+  }
+  
+#eventsUserName {
+	
+	margin-top: 3%;
+	float: left;
+	color: #ffffff;
+}
+
+#eventsUserEmail {
+
+	margin-top: -2%;
+	float: left;
+	color: #ffffff;
+}
+
+#all {
+	color: #ffffff;
+	text-shadow: 0px 0px #000000;
+}
+
+#happening {
+	color: #ffffff;
+	text-shadow: 0px 0px #000000;
+}
+
+#upcoming {
+	color: #ffffff;
+	text-shadow: 0px 0px #000000;
+}
+
+#finished {
+	color: #ffffff;
+	text-shadow: 0px 0px #000000;
+}
+
+#bookmarked {
+	color: #ffffff;
+	text-shadow: 0px 0px #000000;
+}

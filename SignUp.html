@@ -32,22 +32,25 @@
 		</ul>
 	</div>
 
-	<div class="container" align="center">
-		<div class="container myBackground" style="margin-top: 10%; width: 60%;">
-			<h2>Create account </h2><br>
-			<input type="text" placeholder="First name" style="width: 38.5%" required>
-			<input type="text" placeholder="Last name" style="width: 38.5%" required><br>
-			<input type="text" placeholder="Email address" style="width: 80%" required><br>
-			<input type="text" placeholder="Username" style="width: 80%" required><br>
-			<input type="password" placeholder="Password" style="width: 80%" required><br>
-			<input type="password" placeholder="Confirm Password" style="width: 80%" required><br><br>
-			<a class="btn" href="#" role="button"><i class="icon-user"></i> SIGN UP &raquo;</a><br><br>
-		</div>
-	</div>		
+	<form method="POST" action="SignUp.php" class="form-signin" role="form">
+		<div class="container" align="center">
+			<div class="container myBackground" style="margin-top: 10%; width: 60%;">
+				<h2>Create account </h2><br>
+				<input type="text" name="first" placeholder="First name" style="width: 38.5%" required>
+				<input type="text" name="last" placeholder="Last name" style="width: 38.5%" required><br>
+				<input type="text" name="email" placeholder="Email address" style="width: 80%" required><br>
+				<input type="text" name="username" placeholder="Username" style="width: 80%" required><br>
+				<input type="password" name="password" placeholder="Password" style="width: 80%" required><br>
+				<input type="password" name="confirmpassword" placeholder="Confirm Password" style="width: 80%" required><br><br>
+				<input class="btn" type="submit"  value="Signup"><br><br>
+				<!---<a class="btn" href="AfterSignUp.html" role="button"><i class="icon-user"></i> SIGN UP &raquo;</a><br><br>-->
+			</div>
+		</div>		
+	</form>
 
 	<br><br>
 	<div id="copyright" class="container">
-		<font color="pink" size="4%;">&copy; Convivio 2014</font>
+		<font size="4%;">&copy; Convivio 2014. All rights reserved.</font>
 	</div>
 	
   </body>

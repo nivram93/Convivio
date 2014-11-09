@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 02, 2014 at 03:53 PM
+-- Generation Time: Nov 09, 2014 at 04:03 PM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -23,33 +23,58 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `supplier`
+-- Table structure for table `event`
 --
 
-CREATE TABLE IF NOT EXISTS `supplier` (
-  `supplier_id` int(11) NOT NULL AUTO_INCREMENT,
-  `supplier_name` varchar(20) NOT NULL,
-  `supplier_type` int(11) NOT NULL,
-  PRIMARY KEY (`supplier_id`)
+CREATE TABLE IF NOT EXISTS `event` (
+  `eventID` int(11) NOT NULL AUTO_INCREMENT,
+  `eventName` varchar(20) NOT NULL,
+  `eventUserID` int(11) NOT NULL,
+  PRIMARY KEY (`eventID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `supplier_type`
+-- Table structure for table `eventlog`
 --
 
-CREATE TABLE IF NOT EXISTS `supplier_type` (
-  `supplier_type_id` int(11) NOT NULL AUTO_INCREMENT,
-  `supplier_type_name` varchar(20) NOT NULL,
-  PRIMARY KEY (`supplier_type_id`)
+CREATE TABLE IF NOT EXISTS `eventlog` (
+  `eventID` int(11) NOT NULL,
+  `supplierID` int(11) NOT NULL,
+  `DateBooked` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `supplier`
+--
+
+CREATE TABLE IF NOT EXISTS `supplier` (
+  `supplierID` int(11) NOT NULL AUTO_INCREMENT,
+  `supplierName` varchar(20) NOT NULL,
+  `supplierType` int(11) NOT NULL,
+  PRIMARY KEY (`supplierID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `suppliertype`
+--
+
+CREATE TABLE IF NOT EXISTS `suppliertype` (
+  `supplierTypeID` int(11) NOT NULL AUTO_INCREMENT,
+  `supplierTypeName` varchar(20) NOT NULL,
+  PRIMARY KEY (`supplierTypeID`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
--- Dumping data for table `supplier_type`
+-- Dumping data for table `suppliertype`
 --
 
-INSERT INTO `supplier_type` (`supplier_type_id`, `supplier_type_name`) VALUES
+INSERT INTO `suppliertype` (`supplierTypeID`, `supplierTypeName`) VALUES
 (1, 'Catering'),
 (2, 'Venue'),
 (3, 'Photo and Video'),
@@ -64,15 +89,44 @@ INSERT INTO `supplier_type` (`supplier_type_id`, `supplier_type_name`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `user` (
-  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `userID` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(20) NOT NULL,
   `password` varchar(20) NOT NULL,
-  `first_name` varchar(20) NOT NULL,
-  `last_name` varchar(20) NOT NULL,
+  `firstName` varchar(20) NOT NULL,
+  `lastName` varchar(30) NOT NULL,
   `email` varchar(20) NOT NULL,
-  `user_type` int(11) NOT NULL,
-  PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `userType` int(11) NOT NULL,
+  PRIMARY KEY (`userID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`userID`, `username`, `password`, `firstName`, `lastName`, `email`, `userType`) VALUES
+(1, 'marvin', '1234', 'Marvin', 'Suangco', 'marvin_suangco@yahoo', 1),
+(2, 'qwe', '12', 'qwer', 'qwer', 'qwrrt', 1),
+(3, 'we', '123', 'me', 'you', 'me@example.com', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `usertype`
+--
+
+CREATE TABLE IF NOT EXISTS `usertype` (
+  `userTypeID` int(11) NOT NULL AUTO_INCREMENT,
+  `userTypeString` varchar(20) NOT NULL,
+  PRIMARY KEY (`userTypeID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `usertype`
+--
+
+INSERT INTO `usertype` (`userTypeID`, `userTypeString`) VALUES
+(1, 'Organizer'),
+(2, 'Supplier');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
